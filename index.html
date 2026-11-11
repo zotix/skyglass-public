@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sky Glass Launcher — Fluid Liquid Glass Home Screen</title>
-  <meta name="description" content="Fluid Liquid Glass Android home screen. Elegant, ultra-fast, local-only, and 100% ad-free." />
-  <meta property="og:title" content="Sky Glass Launcher" />
-  <meta property="og:description" content="Fluid Liquid Glass Home Screen • Spotlight Search + Instant Math • 100% Ad-Free" />
+  <title>Sky Glass Launcher — APK Download &amp; User Guide</title>
+  <meta name="description" content="Download Sky Glass Launcher APK (Android 11+). Fluid Liquid Glass home screen, Spotlight search with math, smart App Library, zero ads, and 100% offline." />
+  <meta property="og:title" content="Sky Glass Launcher v1.0.1" />
+  <meta property="og:description" content="Direct APK Download, Setup Manual, Checksum &amp; User Guide — 100% Free &amp; Ad-Free" />
   <meta property="og:image" content="assets/feature_graphic_1024x500.png" />
   <link rel="icon" type="image/png" href="assets/ic_launcher_playstore_512.png" />
   <style>
@@ -16,12 +16,14 @@
       --bg-mid: #0c2340;
       --bg-bot: #091728;
       --glass: rgba(255, 255, 255, 0.10);
+      --glass-soft: rgba(255, 255, 255, 0.06);
       --glass-strong: rgba(255, 255, 255, 0.18);
       --glass-border: rgba(255, 255, 255, 0.24);
       --text: #f4f8ff;
-      --muted: rgba(226, 238, 255, 0.80);
+      --muted: rgba(226, 238, 255, 0.82);
       --accent: #7dd3fc;
-      --primary: #0ea5e9;
+      --green: #34d399;
+      --amber: #fbbf24;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -31,47 +33,35 @@
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Leelawadee UI", "Noto Sans Thai", sans-serif;
       color: var(--text);
       background:
-        radial-gradient(900px 520px at 15% 10%, rgba(56, 189, 248, 0.28), transparent 60%),
+        radial-gradient(900px 520px at 14% 8%, rgba(56, 189, 248, 0.28), transparent 60%),
         radial-gradient(760px 560px at 88% 20%, rgba(99, 102, 241, 0.24), transparent 60%),
-        radial-gradient(700px 520px at 50% 95%, rgba(14, 165, 233, 0.20), transparent 60%),
+        radial-gradient(720px 520px at 50% 95%, rgba(14, 165, 233, 0.20), transparent 60%),
         linear-gradient(160deg, var(--bg-top) 0%, var(--bg-mid) 52%, var(--bg-bot) 100%);
-      padding: 36px 16px 56px;
+      padding: 32px 16px 56px;
       line-height: 1.65;
     }
 
-    .container {
-      max-width: 880px;
-      margin: 0 auto;
-    }
+    .container { max-width: 900px; margin: 0 auto; }
 
     .glass-card {
       background: var(--glass);
       backdrop-filter: blur(24px) saturate(150%);
       -webkit-backdrop-filter: blur(24px) saturate(150%);
       border: 1px solid var(--glass-border);
-      border-radius: 28px;
-      padding: 32px 28px;
+      border-radius: 26px;
+      padding: 28px 26px;
       box-shadow: 0 24px 64px rgba(0, 0, 0, 0.36), inset 0 1px 0 rgba(255, 255, 255, 0.25);
-      margin-bottom: 22px;
+      margin-bottom: 20px;
     }
 
-    .hero {
+    .top-bar {
       display: flex;
       flex-wrap: wrap;
       align-items: center;
-      gap: 24px;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 18px;
     }
-
-    .app-icon {
-      width: 104px;
-      height: 104px;
-      border-radius: 26px;
-      border: 1.5px solid rgba(255, 255, 255, 0.35);
-      box-shadow: 0 14px 36px rgba(0, 0, 0, 0.42);
-      flex-shrink: 0;
-    }
-
-    .hero-text { flex: 1 1 280px; }
 
     .badge {
       display: inline-block;
@@ -82,27 +72,84 @@
       color: var(--accent);
       background: rgba(125, 211, 252, 0.16);
       border: 1px solid rgba(125, 211, 252, 0.32);
-      margin-bottom: 10px;
     }
 
+    .lang-switch {
+      display: inline-flex;
+      background: rgba(0, 0, 0, 0.24);
+      border: 1px solid var(--glass-border);
+      border-radius: 999px;
+      padding: 4px;
+      gap: 4px;
+    }
+
+    .lang-btn {
+      border: none;
+      background: transparent;
+      color: var(--muted);
+      font-size: 0.86rem;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: 999px;
+      cursor: pointer;
+    }
+
+    .lang-btn.active {
+      background: var(--glass-strong);
+      color: #ffffff;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.35);
+    }
+
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 22px;
+    }
+
+    .app-icon {
+      width: 96px;
+      height: 96px;
+      border-radius: 24px;
+      border: 1.5px solid rgba(255, 255, 255, 0.35);
+      box-shadow: 0 14px 36px rgba(0, 0, 0, 0.42);
+      flex-shrink: 0;
+    }
+
+    .hero-text { flex: 1 1 280px; }
+
     h1 {
-      font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+      font-size: clamp(1.75rem, 3.4vw, 2.35rem);
       font-weight: 700;
       letter-spacing: -0.02em;
       line-height: 1.18;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
+    }
+
+    h2 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 14px;
+      color: #ffffff;
+    }
+
+    h3 {
+      font-size: 1.02rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+      color: #ffffff;
     }
 
     .subtitle {
       color: var(--muted);
-      font-size: 1.02rem;
+      font-size: 1rem;
     }
 
     .actions {
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
-      margin-top: 22px;
+      margin-top: 18px;
     }
 
     .btn {
@@ -112,9 +159,9 @@
       padding: 11px 20px;
       border-radius: 999px;
       font-weight: 600;
-      font-size: 0.95rem;
+      font-size: 0.94rem;
       text-decoration: none;
-      transition: transform 0.15s ease, background 0.15s ease;
+      transition: transform 0.15s ease;
     }
 
     .btn:hover { transform: translateY(-1px); }
@@ -131,83 +178,298 @@
       border: 1px solid rgba(255, 255, 255, 0.28);
     }
 
-    .grid {
+    .verify-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 16px;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 12px;
+      margin-bottom: 14px;
     }
 
-    .feature-box {
-      background: rgba(255, 255, 255, 0.06);
+    .box {
+      background: var(--glass-soft);
       border: 1px solid rgba(255, 255, 255, 0.16);
-      border-radius: 20px;
-      padding: 18px;
+      border-radius: 18px;
+      padding: 15px 16px;
     }
 
-    .feature-box h2 {
-      font-size: 1.05rem;
-      margin-bottom: 6px;
+    .box-label {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--accent);
+      margin-bottom: 4px;
+      font-weight: 600;
+    }
+
+    .box-val {
+      font-size: 0.96rem;
+      font-weight: 600;
       color: #ffffff;
+      word-break: break-word;
     }
 
-    .feature-box p {
+    .hash-box {
+      background: rgba(0, 0, 0, 0.28);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 14px;
+      padding: 12px 14px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.82rem;
+      color: #e0f2fe;
+      word-break: break-all;
+      margin-top: 8px;
+    }
+
+    .guide-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 14px;
+    }
+
+    .guide-step {
+      background: var(--glass-soft);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 18px;
+      padding: 16px 18px;
+    }
+
+    .guide-step p, .guide-step li {
       color: var(--muted);
       font-size: 0.92rem;
     }
 
+    ul, ol {
+      padding-left: 18px;
+      margin-top: 6px;
+    }
+
+    li { margin-bottom: 5px; }
+
+    .note {
+      margin-top: 12px;
+      padding: 12px 14px;
+      border-radius: 14px;
+      background: rgba(251, 191, 36, 0.12);
+      border: 1px solid rgba(251, 191, 36, 0.30);
+      color: #fef3c7;
+      font-size: 0.9rem;
+    }
+
+    .shots {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
+      gap: 14px;
+    }
+
+    .shots img {
+      width: 100%;
+      border-radius: 18px;
+      border: 1px solid rgba(255, 255, 255, 0.24);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+      display: block;
+    }
+
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.86em;
+      background: rgba(255, 255, 255, 0.10);
+      padding: 1px 5px;
+      border-radius: 5px;
+      color: #e0f2fe;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .hidden { display: none; }
+
     footer {
       text-align: center;
-      color: rgba(226, 238, 255, 0.65);
+      color: rgba(226, 238, 255, 0.68);
       font-size: 0.88rem;
       margin-top: 10px;
     }
-
-    footer a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    footer a:hover { text-decoration: underline; }
   </style>
 </head>
 <body>
   <main class="container">
     <section class="glass-card">
+      <div class="top-bar">
+        <span class="badge">v1.0.1 (Build 4) • Android 11+ • 100% Free &amp; Offline</span>
+        <div class="lang-switch" role="group" aria-label="Language selector">
+          <button class="lang-btn active" id="btn-en" type="button" onclick="setLang('en')">English</button>
+          <button class="lang-btn" id="btn-th" type="button" onclick="setLang('th')">ภาษาไทย</button>
+        </div>
+      </div>
+
       <div class="hero">
         <img class="app-icon" src="assets/ic_launcher_playstore_512.png" alt="Sky Glass Launcher Icon" />
         <div class="hero-text">
-          <span class="badge">Android 11+ • Zero Ads • Offline-First</span>
           <h1>Sky Glass Launcher</h1>
-          <p class="subtitle">
-            Fluid Liquid Glass home screen designed for clarity, speed, and privacy.
-          </p>
+          <p class="subtitle lang-en">Fluid Liquid Glass home screen — fast, zero ads, no <code>INTERNET</code> permission, and completely local on your device.</p>
+          <p class="subtitle lang-th hidden" lang="th">หน้าจอโฮมสไตล์ Liquid Glass ปัดลื่น ฉับไว ไม่มีโฆษณา ไม่ขอสิทธิ์อินเทอร์เน็ต และทำงานภายในเครื่อง 100%</p>
           <div class="actions">
-            <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.ly.skyglass" target="_blank" rel="noopener">Get on Google Play</a>
-            <a class="btn btn-glass" href="privacy_policy.html">Privacy Policy</a>
-            <a class="btn btn-glass" href="mailto:LyStudio31@gmail.com">Support Email</a>
+            <a class="btn btn-primary" href="https://github.com/zotix/skyglass-public/releases/latest/download/SkyGlass-Launcher-v1.0.1.apk">
+              <span class="lang-en">Download APK (v1.0.1 • 3.1 MB)</span>
+              <span class="lang-th hidden" lang="th">ดาวน์โหลด APK (v1.0.1 • 3.1 MB)</span>
+            </a>
+            <a class="btn btn-glass" href="https://github.com/zotix/skyglass-public/releases" target="_blank" rel="noopener">
+              <span class="lang-en">Releases &amp; Changelog</span>
+              <span class="lang-th hidden" lang="th">เวอร์ชันทั้งหมด</span>
+            </a>
+            <a class="btn btn-glass" href="privacy_policy.html">
+              <span class="lang-en">Privacy Policy</span>
+              <span class="lang-th hidden" lang="th">นโยบายความเป็นส่วนตัว</span>
+            </a>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- Integrity & Package Metadata -->
     <section class="glass-card">
-      <div class="grid">
-        <div class="feature-box">
-          <h2>Liquid Glass Engine</h2>
-          <p>Refractive frosted cards, floating ambient dock, and live glass transparency slider.</p>
+      <h2 class="lang-en">APK Verification &amp; Specs</h2>
+      <h2 class="lang-th hidden" lang="th">ข้อมูลไฟล์ APK และการตรวจสอบความแท้</h2>
+      <div class="verify-grid">
+        <div class="box">
+          <div class="box-label">Package ID</div>
+          <div class="box-val"><code>com.ly.skyglass</code></div>
         </div>
-        <div class="feature-box">
-          <h2>Spotlight + Math</h2>
-          <p>Swipe down anywhere to launch apps instantly or evaluate math expressions inline.</p>
+        <div class="box">
+          <div class="box-label">Version / Requirements</div>
+          <div class="box-val">v1.0.1 (4) • Android 11+ (API 30)</div>
         </div>
-        <div class="feature-box">
-          <h2>Smart App Library</h2>
-          <p>Clean on-device categorization with one-tap A–Z home grid rearrangement.</p>
+        <div class="box">
+          <div class="box-label">Permissions Policy</div>
+          <div class="box-val">No <code>INTERNET</code> permission • Ad-Free</div>
         </div>
-        <div class="feature-box">
-          <h2>Privacy by Architecture</h2>
-          <p>No ads, no analytics SDKs, and no <code>INTERNET</code> permission—everything stays on your phone.</p>
+      </div>
+      <div class="box">
+        <div class="box-label">APK File SHA-256 (SkyGlass-Launcher-v1.0.1.apk)</div>
+        <div class="hash-box">c86903786afff3ac9347e890b3cfd9f79ee3fba2ce846c3ead852da63c2cb216</div>
+        <div class="box-label" style="margin-top: 12px;">Signing Certificate SHA-256</div>
+        <div class="hash-box">88:93:FD:FA:C3:98:7F:E3:A5:B5:34:0F:54:52:59:B3:61:BE:02:6A:83:F7:BD:6A:54:24:9D:59:2C:B5:41:6E</div>
+      </div>
+    </section>
+
+    <!-- User Guide & Setup Manual -->
+    <section class="glass-card" id="guide">
+      <h2 class="lang-en">Setup &amp; User Guide</h2>
+      <h2 class="lang-th hidden" lang="th">คู่มือการติดตั้งและการใช้งาน</h2>
+
+      <div class="guide-grid lang-en">
+        <div class="guide-step">
+          <h3>1. Install the APK</h3>
+          <ol>
+            <li>Tap <strong>Download APK</strong> above to save <code>SkyGlass-Launcher-v1.0.1.apk</code>.</li>
+            <li>Open the downloaded file and allow <em>Install unknown apps</em> for your browser or file manager.</li>
+            <li>Verify the SHA-256 hash above if you want extra peace of mind.</li>
+          </ol>
         </div>
+        <div class="guide-step">
+          <h3>2. Set as Default Launcher (Important)</h3>
+          <ol>
+            <li>Open <strong>Sky Glass</strong>, long-press empty wallpaper &rarr; <strong>Sky Glass Settings</strong> &rarr; tap <strong>Set as Default Launcher</strong>.</li>
+            <li>Select <strong>Sky Glass</strong> as your Home app.</li>
+            <li><em>Xiaomi / MIUI users:</em> If prompted, also confirm in <strong>Settings &rarr; Home screen &rarr; Default launcher</strong> so pressing Home always stays in Sky Glass.</li>
+          </ol>
+        </div>
+        <div class="guide-step">
+          <h3>3. Core Gestures &amp; Features</h3>
+          <ul>
+            <li><strong>Swipe down anywhere:</strong> Spotlight Search + instant inline calculator (e.g. <code>1280*1.07/2</code>).</li>
+            <li><strong>Swipe past last Home page:</strong> Smart <strong>App Library</strong> categorized offline on-device.</li>
+            <li><strong>Long-press app icon:</strong> Drag/Jiggle edit mode, Hide App, App Info, Settings, Uninstall.</li>
+            <li><strong>Settings &rarr; Rearrange Apps:</strong> Removes empty gaps and sorts Home pages A–Z while keeping your Dock intact.</li>
+          </ul>
+        </div>
+        <div class="guide-step">
+          <h3>4. Updating to New Versions</h3>
+          <ul>
+            <li>Download the newest APK signed with the same certificate and install directly over the old version (your layout stays intact).</li>
+            <li><strong>Auto-update tip:</strong> Add <code>https://github.com/zotix/skyglass-public</code> inside <strong>Obtainium</strong> to get update alerts automatically.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="guide-grid lang-th hidden" lang="th">
+        <div class="guide-step">
+          <h3>1. ติดตั้งไฟล์ APK</h3>
+          <ol>
+            <li>กดปุ่ม <strong>ดาวน์โหลด APK</strong> ด้านบนเพื่อบันทึกไฟล์ <code>SkyGlass-Launcher-v1.0.1.apk</code></li>
+            <li>เปิดไฟล์ที่โหลด แล้วกดอนุญาต <em>ติดตั้งแอปที่ไม่รู้จัก (Install unknown apps)</em> ของเบราว์เซอร์หรือตัวจัดการไฟล์</li>
+            <li>สามารถเทียบค่า SHA-256 ด้านบนเพื่อยืนยันความแท้ของไฟล์ก่อนติดตั้งได้</li>
+          </ol>
+        </div>
+        <div class="guide-step">
+          <h3>2. ตั้งเป็นหน้าจอหลัก (สำคัญ)</h3>
+          <ol>
+            <li>เปิดแอป <strong>Sky Glass</strong> กดค้างพื้นที่ว่าง &rarr; <strong>การตั้งค่า Sky Glass</strong> &rarr; แตะปุ่ม <strong>ตั้งเป็น Launcher เริ่มต้น</strong></li>
+            <li>เลือก <strong>Sky Glass</strong> เป็นแอปหน้าจอหลัก</li>
+            <li><em>มือถือ Xiaomi / MIUI:</em> ตั้งซ้ำที่ <strong>การตั้งค่า &rarr; หน้าจอหลัก &rarr; ตัวเปิดระบบเริ่มต้น</strong> เพื่อให้กดปุ่ม Home แล้วกลับมาหน้า Sky Glass เสมอ</li>
+          </ol>
+        </div>
+        <div class="guide-step">
+          <h3>3. วิธีใช้งานหลัก</h3>
+          <ul>
+            <li><strong>ปัดลงกลางหน้าจอ:</strong> เปิด Spotlight Search ค้นหาแอปไวและพิมพ์คำนวณเลขทันที (เช่น <code>1280*1.07/2</code>)</li>
+            <li><strong>ปัดไปขวาสุด:</strong> เปิด <strong>คลังแอป (App Library)</strong> จัดหมวดหมู่อัตโนมัติแบบออฟไลน์</li>
+            <li><strong>กดค้างที่ไอคอนแอป:</strong> จัดเรียง/ย้ายหน้า (Jiggle Mode), ซ่อนแอป, ข้อมูลแอป, ตั้งค่า, ถอนการติดตั้ง</li>
+            <li><strong>การตั้งค่า &rarr; เรียงแอปใหม่:</strong> ลบช่องว่างบนหน้าโฮมและเรียงแอป A–Z (ไม่เปลี่ยน Dock)</li>
+          </ul>
+        </div>
+        <div class="guide-step">
+          <h3>4. การอัปเดตเวอร์ชันใหม่</h3>
+          <ul>
+            <li>โหลด APK เวอร์ชันใหม่จากหน้านี้ติดตั้งทับของเดิมได้ทันที ข้อมูลจัดเรียงหน้าโฮมไม่หาย</li>
+            <li><strong>แนะนำ:</strong> นำลิงก์ <code>https://github.com/zotix/skyglass-public</code> ไปเพิ่มในแอป <strong>Obtainium</strong> เพื่อรับแจ้งเตือนอัปเดตอัตโนมัติ</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="note lang-en">
+        <strong>Note on Google Play Protect:</strong> Because this APK is distributed directly outside Play Store, Play Protect may offer a quick one-time scan when installing. The app uses zero <code>INTERNET</code> permission and contains zero tracking SDKs.
+      </div>
+      <div class="note lang-th hidden" lang="th">
+        <strong>หมายเหตุเกี่ยวกับ Google Play Protect:</strong> เนื่องจากเป็นการติดตั้งไฟล์ APK โดยตรงนอก Play Store ระบบอาจขึ้นให้สแกนแอป 1 ครั้งก่อนติดตั้ง (แอปไม่ขอสิทธิ์อินเทอร์เน็ตและไม่มีตัวติดตามใดๆ)
+      </div>
+    </section>
+
+    <!-- Preview Screenshots -->
+    <section class="glass-card">
+      <h2 class="lang-en">Screenshots</h2>
+      <h2 class="lang-th hidden" lang="th">ภาพตัวอย่างหน้าจอ</h2>
+      <div class="shots">
+        <img src="assets/screenshots/01_home_screen.png" alt="Sky Glass Home Screen & Floating Dock" />
+        <img src="assets/screenshots/02_app_context_menu.png" alt="Liquid Glass App Context Menu" />
+        <img src="assets/screenshots/04_settings_glass.png" alt="Liquid Glass Settings & Grid Dimensions" />
+      </div>
+    </section>
+
+    <!-- Changelog & Contact -->
+    <section class="glass-card">
+      <h2 class="lang-en">What's New in v1.0.1 &amp; Support</h2>
+      <h2 class="lang-th hidden" lang="th">บันทึกเวอร์ชัน v1.0.1 และช่องทางติดต่อ</h2>
+      <ul class="lang-en" style="color: var(--muted); padding-left: 20px;">
+        <li>Streamlined Liquid Glass app &amp; wallpaper popup menus.</li>
+        <li>One-tap <strong>Rearrange Apps</strong> with safety confirmation dialog before grid/sort changes.</li>
+        <li>Home button now restores your last visited Home page instead of jumping back to page 1.</li>
+        <li>Offline Privacy Policy &amp; direct email feedback inside Settings.</li>
+      </ul>
+      <ul class="lang-th hidden" lang="th" style="color: var(--muted); padding-left: 20px;">
+        <li>ปรับเมนู popup กดค้างแอปและหน้าโฮมให้กระชับ ใช้งานง่ายขึ้น</li>
+        <li>เพิ่มปุ่ม <strong>เรียงแอปใหม่</strong> พร้อมกล่องยืนยันก่อนเปลี่ยนขนาดกริดหรือจัดเรียงไอคอน</li>
+        <li>กดปุ่ม Home เพื่อกลับมาหน้าล่าสุดที่ใช้งานแทนการดีดกลับหน้าแรกทุกครั้ง</li>
+        <li>เพิ่มหน้า Privacy Policy แบบออฟไลน์และช่องทางส่งฟีดแบ็กทางอีเมลในหน้าตั้งค่า</li>
+      </ul>
+      <div class="actions" style="margin-top: 16px;">
+        <a class="btn btn-glass" href="https://github.com/zotix/skyglass-public/issues" target="_blank" rel="noopener">
+          <span class="lang-en">Report a Bug (GitHub Issues)</span>
+          <span class="lang-th hidden" lang="th">แจ้งบั๊ก (GitHub Issues)</span>
+        </a>
+        <a class="btn btn-glass" href="mailto:LyStudio31@gmail.com">
+          <span class="lang-en">Email: LyStudio31@gmail.com</span>
+          <span class="lang-th hidden" lang="th">อีเมล: LyStudio31@gmail.com</span>
+        </a>
       </div>
     </section>
 
@@ -217,5 +479,26 @@
       <a href="mailto:LyStudio31@gmail.com">LyStudio31@gmail.com</a>
     </footer>
   </main>
+
+  <script>
+    function setLang(lang) {
+      var isTh = lang === 'th';
+      document.querySelectorAll('.lang-en').forEach(function (el) {
+        el.classList.toggle('hidden', isTh);
+      });
+      document.querySelectorAll('.lang-th').forEach(function (el) {
+        el.classList.toggle('hidden', !isTh);
+      });
+      document.getElementById('btn-en').classList.toggle('active', !isTh);
+      document.getElementById('btn-th').classList.toggle('active', isTh);
+    }
+
+    (function () {
+      var langParam = new URLSearchParams(window.location.search).get('lang');
+      if (langParam === 'th' || (!langParam && (navigator.language || '').toLowerCase().startsWith('th'))) {
+        setLang('th');
+      }
+    })();
+  </script>
 </body>
 </html>
