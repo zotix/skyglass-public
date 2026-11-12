@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sky Glass Launcher — APK Download &amp; User Guide</title>
   <meta name="description" content="Download Sky Glass Launcher APK (Android 11+). Fluid Liquid Glass home screen, Spotlight search with math, smart App Library, zero ads, and 100% offline." />
-  <meta property="og:title" content="Sky Glass Launcher v1.0.1" />
+  <meta property="og:title" content="Sky Glass Launcher v1.0.2" />
   <meta property="og:description" content="Direct APK Download, Setup Manual, Checksum &amp; User Guide — 100% Free &amp; Ad-Free" />
   <meta property="og:image" content="assets/feature_graphic_1024x500.png" />
   <link rel="icon" type="image/png" href="assets/ic_launcher_playstore_512.png" />
@@ -282,6 +282,30 @@
     a:hover { text-decoration: underline; }
     .hidden { display: none; }
 
+    .update-banner {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 16px 20px;
+      border-radius: 20px;
+      margin-bottom: 18px;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      backdrop-filter: blur(20px) saturate(140%);
+      -webkit-backdrop-filter: blur(20px) saturate(140%);
+    }
+    .update-banner.is-latest {
+      background: rgba(52, 211, 153, 0.16);
+      border-color: rgba(52, 211, 153, 0.42);
+    }
+    .update-banner.is-outdated {
+      background: rgba(56, 189, 248, 0.18);
+      border-color: rgba(125, 211, 252, 0.50);
+    }
+    .update-banner-title { font-weight: 700; font-size: 1rem; color: #ffffff; }
+    .update-banner-sub { font-size: 0.9rem; color: var(--muted); }
+
     footer {
       text-align: center;
       color: rgba(226, 238, 255, 0.68);
@@ -292,9 +316,20 @@
 </head>
 <body>
   <main class="container">
+    <div id="update-banner" class="update-banner hidden" role="status" aria-live="polite">
+      <div>
+        <div id="update-banner-title" class="update-banner-title"></div>
+        <div id="update-banner-sub" class="update-banner-sub"></div>
+      </div>
+      <a id="update-banner-cta" class="btn btn-primary hidden" href="https://github.com/zotix/skyglass-public/releases/latest/download/SkyGlass-Launcher-v1.0.2.apk">
+        <span class="lang-en">Download v1.0.2</span>
+        <span class="lang-th hidden" lang="th">ดาวน์โหลด v1.0.2</span>
+      </a>
+    </div>
+
     <section class="glass-card">
       <div class="top-bar">
-        <span class="badge">v1.0.1 (Build 4) • Android 11+ • 100% Free &amp; Offline</span>
+        <span class="badge">v1.0.2 (Build 5) • Android 11+ • 100% Free &amp; Offline</span>
         <div class="lang-switch" role="group" aria-label="Language selector">
           <button class="lang-btn active" id="btn-en" type="button" onclick="setLang('en')">English</button>
           <button class="lang-btn" id="btn-th" type="button" onclick="setLang('th')">ภาษาไทย</button>
@@ -308,9 +343,9 @@
           <p class="subtitle lang-en">Fluid Liquid Glass home screen — fast, zero ads, no <code>INTERNET</code> permission, and completely local on your device.</p>
           <p class="subtitle lang-th hidden" lang="th">หน้าจอโฮมสไตล์ Liquid Glass ปัดลื่น ฉับไว ไม่มีโฆษณา ไม่ขอสิทธิ์อินเทอร์เน็ต และทำงานภายในเครื่อง 100%</p>
           <div class="actions">
-            <a class="btn btn-primary" href="https://github.com/zotix/skyglass-public/releases/latest/download/SkyGlass-Launcher-v1.0.1.apk">
-              <span class="lang-en">Download APK (v1.0.1 • 3.1 MB)</span>
-              <span class="lang-th hidden" lang="th">ดาวน์โหลด APK (v1.0.1 • 3.1 MB)</span>
+            <a class="btn btn-primary" href="https://github.com/zotix/skyglass-public/releases/latest/download/SkyGlass-Launcher-v1.0.2.apk">
+              <span class="lang-en">Download APK (v1.0.2 • 3.2 MB)</span>
+              <span class="lang-th hidden" lang="th">ดาวน์โหลด APK (v1.0.2 • 3.2 MB)</span>
             </a>
             <a class="btn btn-glass" href="https://github.com/zotix/skyglass-public/releases" target="_blank" rel="noopener">
               <span class="lang-en">Releases &amp; Changelog</span>
@@ -336,7 +371,7 @@
         </div>
         <div class="box">
           <div class="box-label">Version / Requirements</div>
-          <div class="box-val">v1.0.1 (4) • Android 11+ (API 30)</div>
+          <div class="box-val">v1.0.2 (5) • Android 11+ (API 30)</div>
         </div>
         <div class="box">
           <div class="box-label">Permissions Policy</div>
@@ -344,8 +379,8 @@
         </div>
       </div>
       <div class="box">
-        <div class="box-label">APK File SHA-256 (SkyGlass-Launcher-v1.0.1.apk)</div>
-        <div class="hash-box">907e0c3b9047c8f29895ed3113de66ccc105b12958c7282ce3401f444c5b8e65</div>
+        <div class="box-label">APK File SHA-256 (SkyGlass-Launcher-v1.0.2.apk)</div>
+        <div class="hash-box">0b0bf7bb83cadd8896902ec6b0fd0f9a73c83690aa5a549585158c4a27ea4806</div>
         <div class="box-label" style="margin-top: 12px;">Signing Certificate SHA-256</div>
         <div class="hash-box">88:93:FD:FA:C3:98:7F:E3:A5:B5:34:0F:54:52:59:B3:61:BE:02:6A:83:F7:BD:6A:54:24:9D:59:2C:B5:41:6E</div>
       </div>
@@ -360,7 +395,7 @@
         <div class="guide-step">
           <h3>1. Install the APK</h3>
           <ol>
-            <li>Tap <strong>Download APK</strong> above to save <code>SkyGlass-Launcher-v1.0.1.apk</code>.</li>
+            <li>Tap <strong>Download APK</strong> above to save <code>SkyGlass-Launcher-v1.0.2.apk</code>.</li>
             <li>Open the downloaded file and allow <em>Install unknown apps</em> for your browser or file manager.</li>
             <li>Verify the SHA-256 hash above if you want extra peace of mind.</li>
           </ol>
@@ -395,7 +430,7 @@
         <div class="guide-step">
           <h3>1. ติดตั้งไฟล์ APK</h3>
           <ol>
-            <li>กดปุ่ม <strong>ดาวน์โหลด APK</strong> ด้านบนเพื่อบันทึกไฟล์ <code>SkyGlass-Launcher-v1.0.1.apk</code></li>
+            <li>กดปุ่ม <strong>ดาวน์โหลด APK</strong> ด้านบนเพื่อบันทึกไฟล์ <code>SkyGlass-Launcher-v1.0.2.apk</code></li>
             <li>เปิดไฟล์ที่โหลด แล้วกดอนุญาต <em>ติดตั้งแอปที่ไม่รู้จัก (Install unknown apps)</em> ของเบราว์เซอร์หรือตัวจัดการไฟล์</li>
             <li>สามารถเทียบค่า SHA-256 ด้านบนเพื่อยืนยันความแท้ของไฟล์ก่อนติดตั้งได้</li>
           </ol>
@@ -447,19 +482,19 @@
 
     <!-- Changelog & Contact -->
     <section class="glass-card">
-      <h2 class="lang-en">What's New in v1.0.1 &amp; Support</h2>
-      <h2 class="lang-th hidden" lang="th">บันทึกเวอร์ชัน v1.0.1 และช่องทางติดต่อ</h2>
+      <h2 class="lang-en">What's New in v1.0.2 &amp; Support</h2>
+      <h2 class="lang-th hidden" lang="th">บันทึกเวอร์ชัน v1.0.2 และช่องทางติดต่อ</h2>
       <ul class="lang-en" style="color: var(--muted); padding-left: 20px;">
-        <li>Streamlined Liquid Glass app &amp; wallpaper popup menus.</li>
-        <li>One-tap <strong>Rearrange Apps</strong> with safety confirmation dialog before grid/sort changes.</li>
-        <li>Home button now restores your last visited Home page instead of jumping back to page 1.</li>
-        <li>Offline Privacy Policy &amp; direct email feedback inside Settings.</li>
+        <li><strong>Offline Layout Backup &amp; Restore:</strong> Save quick in-app snapshots or export/import <code>.json</code> layout files without extra permissions.</li>
+        <li><strong>Grid Shrink Overflow Protection:</strong> Shrinking grids (e.g. <code>5×7</code> to <code>4×5</code>) cleanly wraps extra icons onto subsequent pages without overlap or loss.</li>
+        <li><strong>Work Profile &amp; Background Scanning:</strong> Isolated per-profile app keys and offloaded package callbacks off the main thread.</li>
+        <li><strong>Spotlight &amp; Launcher Persistence:</strong> Spotlight Search opens English keyboard first, excluded from Recents, plus quick App Info shortcut for battery settings.</li>
       </ul>
       <ul class="lang-th hidden" lang="th" style="color: var(--muted); padding-left: 20px;">
-        <li>ปรับเมนู popup กดค้างแอปและหน้าโฮมให้กระชับ ใช้งานง่ายขึ้น</li>
-        <li>เพิ่มปุ่ม <strong>เรียงแอปใหม่</strong> พร้อมกล่องยืนยันก่อนเปลี่ยนขนาดกริดหรือจัดเรียงไอคอน</li>
-        <li>กดปุ่ม Home เพื่อกลับมาหน้าล่าสุดที่ใช้งานแทนการดีดกลับหน้าแรกทุกครั้ง</li>
-        <li>เพิ่มหน้า Privacy Policy แบบออฟไลน์และช่องทางส่งฟีดแบ็กทางอีเมลในหน้าตั้งค่า</li>
+        <li><strong>บันทึกและกู้คืนการจัดหน้าแบบออฟไลน์:</strong> บันทึกสแนปช็อตในแอปหรือส่งออก/นำเข้าไฟล์ <code>.json</code> โดยไม่ต้องขอสิทธิ์เพิ่ม</li>
+        <li><strong>กันไอคอนซ้อน/หายเวลาย่อกริด:</strong> ย่อตารางกริด (เช่น <code>5×7</code> เหลือ <code>4×5</code>) แล้วไอคอนส่วนเกินจะไหลไปหน้าถัดไปอัตโนมัติ</li>
+        <li><strong>รองรับ Work Profile และย้ายสแกนแอปไปเบื้องหลัง:</strong> แยก key ตามโปรไฟล์และลดภาระ Main Thread เมื่อติดตั้ง/อัปเดตแอป</li>
+        <li><strong>Spotlight &amp; กันปิด Launcher:</strong> คีย์บอร์ด Spotlight เริ่มภาษาอังกฤษก่อน ซ่อนจากหน้า Recent Apps และมีทางลัดตั้งค่าแบตเตอรี่ใน Settings</li>
       </ul>
       <div class="actions" style="margin-top: 16px;">
         <a class="btn btn-glass" href="https://github.com/zotix/skyglass-public/issues" target="_blank" rel="noopener">
@@ -481,8 +516,49 @@
   </main>
 
   <script>
+    var LATEST_VERSION_CODE = 5;
+    var LATEST_VERSION_NAME = '1.0.2';
+    var currentLang = 'en';
+
+    function updateCheckBanner() {
+      var params = new URLSearchParams(window.location.search);
+      var rawCode = params.get('installedCode');
+      if (!rawCode) return;
+      var installedCode = parseInt(rawCode, 10);
+      if (isNaN(installedCode)) return;
+      var installedVer = params.get('installedVer') || ('Build ' + installedCode);
+
+      var banner = document.getElementById('update-banner');
+      var titleEl = document.getElementById('update-banner-title');
+      var subEl = document.getElementById('update-banner-sub');
+      var ctaEl = document.getElementById('update-banner-cta');
+      var isTh = currentLang === 'th';
+
+      banner.classList.remove('hidden', 'is-latest', 'is-outdated');
+      if (installedCode >= LATEST_VERSION_CODE) {
+        banner.classList.add('is-latest');
+        ctaEl.classList.add('hidden');
+        titleEl.textContent = isTh
+          ? 'คุณใช้งานเวอร์ชันล่าสุดแล้ว (v' + LATEST_VERSION_NAME + ')'
+          : 'You are on the latest version (v' + LATEST_VERSION_NAME + ')';
+        subEl.textContent = isTh
+          ? 'เวอร์ชันที่ติดตั้งบนเครื่อง: v' + installedVer + ' (Build ' + installedCode + ')'
+          : 'Installed on your device: v' + installedVer + ' (Build ' + installedCode + ')';
+      } else {
+        banner.classList.add('is-outdated');
+        ctaEl.classList.remove('hidden');
+        titleEl.textContent = isTh
+          ? 'มีอัปเดตใหม่ v' + LATEST_VERSION_NAME + ' พร้อมให้ดาวน์โหลด!'
+          : 'Update available: v' + LATEST_VERSION_NAME + ' is ready!';
+        subEl.textContent = isTh
+          ? 'บนเครื่องเป็น v' + installedVer + ' (Build ' + installedCode + ') • อัปเดตทับได้ทันทีข้อมูลไม่หาย'
+          : 'Installed: v' + installedVer + ' (Build ' + installedCode + ') • Install over existing app safely';
+      }
+    }
+
     function setLang(lang) {
-      var isTh = lang === 'th';
+      currentLang = lang === 'th' ? 'th' : 'en';
+      var isTh = currentLang === 'th';
       document.querySelectorAll('.lang-en').forEach(function (el) {
         el.classList.toggle('hidden', isTh);
       });
@@ -491,12 +567,15 @@
       });
       document.getElementById('btn-en').classList.toggle('active', !isTh);
       document.getElementById('btn-th').classList.toggle('active', isTh);
+      updateCheckBanner();
     }
 
     (function () {
       var langParam = new URLSearchParams(window.location.search).get('lang');
       if (langParam === 'th' || (!langParam && (navigator.language || '').toLowerCase().startsWith('th'))) {
         setLang('th');
+      } else {
+        updateCheckBanner();
       }
     })();
   </script>
